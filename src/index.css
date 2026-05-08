@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@300;400;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #D4AF37;
+  --color-gold-light: #F4D03F;
+  --color-gold-dark: #B8860B;
+  --color-dark-bg: #050505;
+  --color-dark-surface: #0F0F0F;
+  
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-serif: 'Cinzel', serif;
+}
+
+body {
+  background-color: var(--color-dark-bg);
+  color: #E0E0E0;
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+}
+
+.gold-text {
+  font-family: var(--font-serif);
+}
+
+/* Sleek Neumorphic Button */
+.btn-gold-3d {
+  background: linear-gradient(145deg, #121212, #080808);
+  color: var(--color-gold);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 
+    8px 8px 16px #000,
+    -4px -4px 12px rgba(212, 175, 55, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-gold-3d:active {
+  box-shadow: 
+    inset 4px 4px 8px #000, 
+    inset -4px -4px 8px rgba(255, 255, 255, 0.02);
+  transform: translateY(2px);
+}
+
+.btn-gold-3d:hover {
+  filter: brightness(1.2);
+}
+
+.btn-gold-3d svg {
+  color: var(--color-gold);
+}
+
+/* Neumorphic Card / Panel */
+.panel-3d {
+  background: var(--color-dark-surface);
+  border-radius: 24px;
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  box-shadow: 
+    10px 10px 20px #000, 
+    -5px -5px 15px rgba(212, 175, 55, 0.05);
+}
+
+/* Gold Text Gradient */
+.text-gold-gradient {
+  background: linear-gradient(to right, var(--color-gold), var(--color-gold-light), var(--color-gold-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: var(--font-serif);
+}
+
+/* Blueprint Grid Background */
+.bg-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 175, 55, 0.03) 1px, transparent 1px);
+}
+
+/* Timer Digit (Neumorphic Inner Shadow) */
+.timer-digit {
+  background: var(--color-dark-surface);
+  box-shadow: 
+    inset 4px 4px 8px #000, 
+    inset -4px -4px 8px rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 8px;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 0.75rem)); }
+}
+
+@keyframes scroll-reverse {
+  0% { transform: translateX(calc(-50% - 0.75rem)); }
+  100% { transform: translateX(0); }
+}
+
+.animate-scroll {
+  animation: scroll 60s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+.animate-scroll-reverse {
+  animation: scroll-reverse 60s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+.animate-scroll-reverse:hover {
+  animation-play-state: paused;
+}
+
